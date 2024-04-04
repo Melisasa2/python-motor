@@ -1,3 +1,16 @@
+# Notas
+
+
+- Ejecucion en local
+Primero tube que aprender como ejecutar lo que habia y no me deja asi que inestigando tengo que tener un archivo `requirements.txt` que tiene lo que voy a usar, pero par poderlos usar toca crear un espacio donde colocarlos que es con `python -m venv venv` he estado investigando el porque pero aun no entiendo la razon, y mas ensima despues de eso hi si se agregan a ese espacio asi `pip install -r requirements.txt`.
+
+
+
+
+
+
+
+
 # Ejercicio: Motor de Búsqueda para Tutelas del MinJusticia
 
 ## Descripción
