@@ -3,7 +3,7 @@
 
 - Ejecucion en local
 
-Primero tube que aprender como ejecutar lo que habia y no me deja asi que inestigando tengo que tener un archivo `requirements.txt` que tiene lo que voy a usar, pero par poderlos usar toca crear un espacio donde colocarlos que es con `python -m venv venv` he estado investigando el porque pero aun no entiendo la razon, y mas ensima despues de eso hi si se agregan a ese espacio asi `pip install -r requirements.txt`.
+Primero tuve que aprender como ejecutar lo que habia, investigando tengo que tener un archivo `requirements.txt` que tiene lo que voy a usar, para poderlo usar toca crear un espacio donde colocarlos que es con `python -m venv venv` he estado investigando el porque pero aun no entiendo la razon, ahi si se agregan a ese espacio asi `pip install -r requirements.txt`.
 
 
 - [Tutorial de FastAPI https://fastapi.tiangolo.com/#create-it](https://fastapi.tiangolo.com/#create-it)
@@ -20,7 +20,7 @@ INFO:     Application startup complete.
 INFO:     10.240.2.99:0 - "GET / HTTP/1.1" 200 OK
 INFO:     10.240.2.99:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 ```
-"Uvicorn" es como el encargado de hacer funcionar mi aplicación web. Cuando ejecuto uvicorn main:app --reload, básicamente le estoy diciendo a Uvicorn: "Hey, toma el código que escribí en el archivo main.py, donde está la parte principal de mi aplicación (que se llama app), y ejecútalo como un sitio web en mi computadora".
+"Uvicorn" es como el encargado de hacer funcionar mi aplicación web. Cuando ejecuto uvicorn main:app --reload, básicamente le estoy diciendo a Uvicorn: "toma el código que escribí en el archivo main.py, donde está la parte principal de mi aplicación (que se llama app), y ejecútalo como un sitio web en mi computadora".
 
 Y lo del --reload es como un truco útil que le digo a Uvicorn: "Si veo un error o quiero hacer algún cambio en mi código, no quiero tener que apagar y volver a encender el servidor cada vez. Así que, por favor, actualízate automáticamente cuando haga cambios".
 
@@ -30,7 +30,7 @@ Cuando veo esas líneas que comienzan con INFO, es como si estuviera recibiendo 
 
 Por ejemplo, cuando veo 10.240.2.99:0 - `GET / HTTP/1.1` 200 OK, es como si alguien estuviera pidiendo ver la página principal de mi programa. Me alegra ver que todo está bien (200 OK) y que puedo mostrarles la página sin problemas.
 
-No estoy muy seguro de lo que significa `GET /favicon.ico HTTP/1.1 404 Not Found`. Parece que alguien está buscando algo, pero no estoy seguro de qué es (404 Not Found). Parece ser algo que se llama favicon.ico, pero no tengo idea de qué es eso, segun entiendo eso se define en el codigo pero ahi no hay nada de favicon.ico
+No estoy muy segura de lo que significa `GET /favicon.ico HTTP/1.1 404 Not Found`. Parece que alguien está buscando algo, pero no estoy seguro de qué es (404 Not Found). Parece ser algo que se llama favicon.ico, pero no tengo idea de qué es eso, segun entiendo eso se define en el codigo pero ahi no hay nada de favicon.ico
 
 el resultado de mi programa fue 
 ```json
