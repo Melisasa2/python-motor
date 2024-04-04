@@ -2,13 +2,60 @@
 
 
 - Ejecucion en local
+
 Primero tube que aprender como ejecutar lo que habia y no me deja asi que inestigando tengo que tener un archivo `requirements.txt` que tiene lo que voy a usar, pero par poderlos usar toca crear un espacio donde colocarlos que es con `python -m venv venv` he estado investigando el porque pero aun no entiendo la razon, y mas ensima despues de eso hi si se agregan a ese espacio asi `pip install -r requirements.txt`.
 
 
+- [Tutorial de FastAPI https://fastapi.tiangolo.com/#create-it](https://fastapi.tiangolo.com/#create-it)
 
+Haciendo el tutorial de la pagina de fastAPI encontre que toca agregar mas cosas a usar, las colocare en el archivo `requirements.txt` al igual de las demas, ya agrege `uvicorn[standard]` en el. al colocar e la terminal el comando del tutorial me da 
+```bash
+(venv) @Melisasa2 ➜ /workspaces/python-motor (main) $ uvicorn main:app --reload
+INFO:     Will watch for changes in these directories: ['/workspaces/python-motor']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [14962] using WatchFiles
+INFO:     Started server process [14964]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     10.240.2.99:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.240.2.99:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+```
+"Uvicorn" es como el encargado de hacer funcionar mi aplicación web. Cuando ejecuto uvicorn main:app --reload, básicamente le estoy diciendo a Uvicorn: "Hey, toma el código que escribí en el archivo main.py, donde está la parte principal de mi aplicación (que se llama app), y ejecútalo como un sitio web en mi computadora".
 
+Y lo del --reload es como un truco útil que le digo a Uvicorn: "Si veo un error o quiero hacer algún cambio en mi código, no quiero tener que apagar y volver a encender el servidor cada vez. Así que, por favor, actualízate automáticamente cuando haga cambios".
 
+Es como si estuviera diciendo a Uvicorn: "Haz que mi aplicación web funcione y actualízate automáticamente si cambio algo".
 
+Cuando veo esas líneas que comienzan con INFO, es como si estuviera recibiendo actualizaciones sobre lo que está pasando en mi programa mientras está en funcionamiento. Es como si alguien me estuviera contando lo que está sucediendo adentro.
+
+Por ejemplo, cuando veo 10.240.2.99:0 - `GET / HTTP/1.1` 200 OK, es como si alguien estuviera pidiendo ver la página principal de mi programa. Me alegra ver que todo está bien (200 OK) y que puedo mostrarles la página sin problemas.
+
+No estoy muy seguro de lo que significa `GET /favicon.ico HTTP/1.1 404 Not Found`. Parece que alguien está buscando algo, pero no estoy seguro de qué es (404 Not Found). Parece ser algo que se llama favicon.ico, pero no tengo idea de qué es eso, segun entiendo eso se define en el codigo pero ahi no hay nada de favicon.ico
+
+el resultado de mi programa fue 
+```json
+{
+  "Hello": "World"
+}
+```
+
+siguiendo las pruebas que me están indicando. Cuando escribo /items/5?q=somequery, algo aparece en la pantalla. ¡Es como si mi programa estuviera respondiendo tal como me dijeron en el tutorial!
+
+Lo que veo en la pantalla es algo como `{"item_id":5,"q":"somequery"}`. Hmm, parece que esto es la información sobre el artículo número 5, y también algo que estoy `"somequery"` que es el texto que se mando a `?q=somequery`
+
+- Implementación de Endpoint con FastAPI
+Con eso creo que ya puedo hacer el `http://[mi_ip]/api/v1/search?tipo_tutela=salud` que e piden ya que veo que es muy parecido
+con la funcion 
+```python
+
+@app.get("/api/v1/search")
+def search(tipo_tutela: Union[str, None] = None):
+    return {"tipo_tutela": tipo_tutela}
+```
+al probar `/api/v1/search?tipo_tutela=salud` me dio como resultado 
+```json
+{"tipo_tutela":"salud"}
+```
 
 
 # Ejercicio: Motor de Búsqueda para Tutelas del MinJusticia
