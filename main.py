@@ -1,7 +1,7 @@
 from typing import Union
 from mook import tutelas
 from fastapi import FastAPI
-from indexing import crear_caja_AZ_tipo, crear_caja_AZ_decreto, crear_caja_clave
+from cajas import crear_caja_AZ_tipo, crear_caja_AZ_decreto, crear_caja_clave
 
 app = FastAPI()
 
